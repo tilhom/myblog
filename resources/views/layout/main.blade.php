@@ -20,29 +20,22 @@
   <body>
 
     <div class="container">
-      @include('layouts.header')
-
-      @include('layouts.nav')
-
-      @include('layouts.jumbotron')
+      @include('layout.header')
+      @include('layout.nav')
+      @include('layout.jumbotron')
     </div>
 
     <main role="main" class="container">
       <div class="row">
         @yield('content')
 
-        @include('layouts.sidebar')
+        @include('layout.sidebar')
 
       </div><!-- /.row -->
 
     </main><!-- /.container -->
 
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
+   @include('layout.footer')
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
