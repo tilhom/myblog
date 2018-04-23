@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
     public function index()
     {
-    	return view('post.index');
+        setlocale(LC_TIME, 'Russian');
+        $posts = Post::all();
+    	return view('post.index',compact('posts'));
     }
     public function create()
     {
@@ -36,10 +39,16 @@ class PostController extends Controller
             'title.required' => "Nomini to'ldirish shart",
             'body.required'  => "Matnini to'ldirish shart",
         ]);
-    	\App\Post::create(
+    	Post::create(
     		request(['title','body'])
     	);
 
     	return redirect('/');
     }  
+
+    public function show($id)
+    {
+        $post = Post::find($id);
+        return view('post.show', compact('post'));
+    }
 }

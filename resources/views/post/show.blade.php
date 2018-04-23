@@ -5,9 +5,9 @@
           <h3 class="pb-3 mb-4 font-italic border-bottom">
             From the Firehose
           </h3>
-          @foreach ($posts as $post)
+         
              @include('post.post')
-          @endforeach
+        
          
           <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>
