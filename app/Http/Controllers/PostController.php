@@ -9,7 +9,6 @@ class PostController extends Controller
 {
     public function index()
     {
-        setlocale(LC_TIME, 'Russian');
         $posts = Post::all();
     	return view('post.index',compact('posts'));
     }
