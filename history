@@ -1,0 +1,13 @@
+ composer create-project --prefer-dist laravel/laravel dusk -vvv
+ composer require --dev laravel/dusk -dev
+ a dusk:install
+ a dusk
+ a make:auth
+ a dusk:make RegisterTest
+ a cache:clear
+ a migrate:fresh
+ a make:auth
+ a make:factory PostFactory -m Post
+ a tinker
+ a migrate:fresh --seed
+ npm run dev
