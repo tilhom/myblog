@@ -24,12 +24,8 @@ class PostController extends Controller
 
         // $posts = $posts->simplePaginate(3);
 
-        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published ')
-        ->groupBy('year','month')
-        ->orderByRaw('max(created_at)')
-        ->get()
-        ->toArray();
-    	return view('post.index',compact('posts','archives'));
+       
+    	return view('post.index',compact('posts'));
     }
     public function create()
     {
