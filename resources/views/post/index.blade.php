@@ -14,6 +14,6 @@
             <a class="btn btn-outline-secondary disabled" href="#">Newer</a> -->
            {{ $posts->links('post.simple-bootstrap-4') }}
           </nav>
-
+<?php dump($archives) ?>
         </div><!-- /.blog-main -->
 @endsection

@@ -13,13 +13,16 @@
         <ul>
           @foreach($post->comments as $comment)
           <li>
-            <b>{{$comment->created_at->diffForHumans()}}: </b>{{$comment->body}}
+            <b>{{$comment->user->name}} on {{$comment->created_at->diffForHumans()}}: </b>
+            <br>{{$comment->body}}
           </li>
           @endforeach
         </ul>
       @endif
       <hr>
-     @include('post.comment')
+      @if(Auth::check()) 
+        @include('post.comment')
+      @endif
       <!--    
           <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>

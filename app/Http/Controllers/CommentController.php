@@ -24,7 +24,7 @@ class CommentController extends Controller
     			'body.min' => 'Izohga kamida 2 xarf to\'ldirilishi kerak'
     		]
     	);
-    	$post->comments()->create(['body'=>request('body')]);
+    	$post->comments()->create(['body'=>request('body'), 'user_id'=>auth()->id()]);
     	return back();
     }
 }
