@@ -1,55 +1,27 @@
-# Lara blog by Ilyos Xizr
+# Lara blog by Ilyos Xizr (laravel 5.6)
 
-## 1. Layout
+## Installing App
 
-create views/layouts/main.blade.php
+Laravel utilizes Composer to manage its dependencies. So, before using Laravel, make sure you have Composer installed on your machine.
 
-create views/layouts/nav.blade.php
-
-create views/layouts/header.blade.php
-
-create views/layouts/footer.blade.php
-
-```code
-php artisan make:model Post -mc;
+You may install Laravel by issuing the Composer create-project command in your terminal:
 ```
-migration
-```code
-Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->text('body');
-            $table->timestamps();
-        });
+composer create-project laravel/laravel blog
 ```
+copy .env.example to .env file
 
-create route 
-```php
-Route::get('/','PostsController@index');
+Create a new database end fix .env file
+
+Then create tables and dummy data 
 ```
-create action PostsController@index
-```php
-    public function index()
-    {
-    	return view('post.index');
-    }
+php artisan migrate:fresh --seed
 ```
-create views/post/index.blade.php
+## Local Development Server
 
-create route 
-```php
-Route::get('/posts/create','PostController@create');
+If you have PHP installed locally and you would like to use PHP's built-in development server to serve your application, you may use the serve Artisan command. This command will start a development server at http://localhost:8000:
 ```
-create views/post/create.blade.php
-
-create route 
-```php
-Route::post('/posts','PostController@store');
+php artisan serve
 ```
-
-create store in PostsController
-
-
 
 
 
