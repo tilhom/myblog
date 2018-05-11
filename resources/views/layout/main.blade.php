@@ -17,13 +17,20 @@
   </head>
 
   <body>
+    @if($flash = session('message'))
+      <div id="flash-message" class="alert alert-success alert-dismissible fade show" role="alert">
+        {{$flash}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    @endif
 
     <div class="container">
       @include('layout.header')
       @include('layout.nav')
       @include('layout.jumbotron')
     </div>
-
     <main role="main" class="container">
       <div class="row">
         @yield('content')
@@ -39,10 +46,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{asset('js/jquery-slim.min.js')"></script>
-    <script src="{{asset('js/popper.min.js')"></script>
-    <script src="{{asset('js/bootstrap.min.js')"></script>
-    <script src="{{asset('js/holder.min.js')"></script>
+    <script src="{{asset('js/jquery-slim.min.js')}}"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/holder.min.js')}}"></script>
     <script>
       Holder.addTheme('thumb', {
         bg: '#55595c',
