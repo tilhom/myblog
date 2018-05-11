@@ -25,6 +25,8 @@ class SessionController extends Controller
     	 		'message' => 'Please check your credentials and try again '
     	 	])->with(request(['email']));
     	 }
+
+         
     	 return redirect()->home();
     }
 
