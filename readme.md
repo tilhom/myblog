@@ -1,4 +1,4 @@
-# Lara blog by Ilyos Xizr (laravel 5.6)
+# Lara blog by Ilyos Xizr (laravel 5.5)
 
 ## Installing App
 
