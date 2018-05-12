@@ -14,15 +14,8 @@ class PostController extends Controller
     }
     public function index()
     {
-        // $posts = Post::latest()->simplePaginate(3);
-        // $posts = Post::latest();
+    
         $posts = Post::latest()->filter(request(['month','year']))->simplePaginate(3);
-
-
-        // if ($month = request('month')) $posts->whereMonth('created_at', Carbon::parse($month)->month);
-        // if ($year = request('year')) $posts->whereYear('created_at', $year);
-
-        // $posts = $posts->simplePaginate(3);
 
        
     	return view('post.index',compact('posts'));

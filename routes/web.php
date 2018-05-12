@@ -6,6 +6,7 @@ Route::post('/posts','PostController@store');
 Route::get('/posts/{id}','PostController@show');
 Route::post('/posts/{post}/comments','CommentController@store');
 
+Route::get('/posts/tags/{tag}','TagsController@index');
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
